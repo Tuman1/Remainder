@@ -54,5 +54,3 @@ if __name__=='__main__':
     print(Manager.view_list())
 
     print(Manager.return_random())
-    # Manager.del_card('Apple', 'cake')
-    # print(Manager.view_list())

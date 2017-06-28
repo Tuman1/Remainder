@@ -1,21 +1,18 @@
-import time
+import datetime
 
 class Time_man:
     '''This class is needed for raising cards according to users needs.'''
-    def __init__(self, Manager_card):
-        self.Work_state = True
-        self.Manager_card = Manager_card
-    def Each(self, dtime):
-        # Randam return of the card each dtime
-        dtime_sec = dtime * 60
-        while True:
-            if Work_state:
-                time.sleep(dtime_sec)
-                self.Manager_card.return_random(3)
-            else:
-                break
-        return True
+    def __init__(self):
+        self.Work_state = False
 
+    def SetTime(self, hours=0, minutes=0, seconds=0):
+        Alram_Time=datetime.time(hours, minutes, seconds)
+        self.Work_state=True
+        return Alram_Time
+
+    def RaiseCards(self, command):
+        command
+        return None
     # def
 
 if __name__=='__main__':
@@ -30,5 +27,7 @@ if __name__=='__main__':
 
     Manager.add_to_list(card_1, card_2, card_3,card_4,card_5)
 
-    obj = Time_man(Manager)
+    obj = Time_man()
+    print(obj.SetTime(hours=1, minutes=1, seconds=1))
     print(obj.Work_state)
+    print(obj.RaiseCards(print("Hello")))
