@@ -20,11 +20,10 @@ class Model_Card:
                 return False
         return True
 
-
     def view_list(self):
         cards=[]
         for item in self.card_dic:
-            cards.append('\n\tCard name : {} \n\tSubs: {}'.format(self.card_dic[item].Teor_name, self.card_dic[item].Teor_Subs[:30] ))
+            cards.append(self.card_dic[item].strcard())
         return 'List of Cards:\n'+'\n'.join(cards)
 
     def del_card(self, *args):
@@ -35,7 +34,7 @@ class Model_Card:
                 print('Card {} is not in list'.format(name))
         return True
 
-    def return_random(self, Num_Cards=10):
+    def return_random(self, Num_Cards=1):
         result = []
         for i in range(0, Num_Cards,1):
             random_key = list(self.card_dic.keys())[random.randrange(len(self.card_dic.keys()))]
@@ -51,7 +50,7 @@ if __name__=='__main__':
     card_4 = Card_class.Card('Cola', "BBBBBBBBBBBBBBBBBBBBBBB")
     card_5 = Card_class.Card('OKA', "MMMMMMMMMMMMMMMMMMMMMMMM")
 
-    Manager.add_to_list(card_1, card_2, card_3)
+    Manager.add_to_list(card_1, card_2, card_3, card_4, card_5)
     print(Manager.view_list())
 
     print(Manager.return_random())

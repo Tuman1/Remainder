@@ -13,7 +13,8 @@ class Time_man:
                 time.sleep(dtime_sec)
                 self.Manager_card.return_random(3)
             else:
-                
+                break
+        return True
 
     # def
 
